@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Echoes of the Unseen - Official Plugin</title>
+
+  <!-- Google Fonts:
+       - "Bebas Neue" (condensed, bold) for headers
+       - "Open Sans" for body text -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --bg-color: #121c3b;       /* Midnight Blue */
+      --accent-color: #b31942;   /* Crimson */
+      --text-color: #c4c4c4;     /* Silver Gray */
+      --gold-color: #c9ac58;     /* Faded Gold */
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-color);
+      font-family: 'Open Sans', sans-serif;
+      color: var(--text-color);
+    }
+
+    /* Container to center content and manage spacing */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    /* Main Heading */
+    h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      color: var(--gold-color);
+      letter-spacing: 1px;
+    }
+
+    /* Secondary Tagline */
+    .tagline {
+      font-size: 1.25rem;
+      color: var(--text-color);
+      margin-bottom: 2rem;
+    }
+
+    /* The embedded video area */
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 ratio */
+      height: 0;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Thematic copy block */
+    .content-block {
+      text-align: left;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+    .content-block p {
+      margin: 1rem 0;
+    }
+
+    /* Download Link as a styled button */
+    .download-btn {
+      display: inline-block;
+      background-color: var(--accent-color);
+      color: #fff;
+      text-decoration: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      transition: background-color 0.2s ease;
+      margin-bottom: 2rem;
+    }
+    .download-btn:hover {
+      background-color: #8b1533; /* Darken accent on hover */
+    }
+
+    /* Section title for the "Who Will You Be?" part */
+    h2.section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      color: var(--gold-color);
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    /* Playstyle cards container */
+    .playstyle-card {
+      display: flex;
+      align-items: center;
+      margin-bottom: 2rem;
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+      overflow: hidden;
+      text-align: left;
+    }
+
+    /* Responsive stacking on smaller screens */
+    @media (max-width: 768px) {
+      .playstyle-card {
+        flex-direction: column;
+      }
+    }
+
+    /* The left image side */
+    .playstyle-card img {
+      width: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Right text block within the card */
+    .playstyle-content {
+      padding: 1rem 1.5rem;
+      flex: 1;
+    }
+    .playstyle-content h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.75rem;
+      margin: 0 0 0.5rem 0;
+      color: var(--text-color);
+    }
+    .playstyle-content p {
+      margin: 0 0 1rem 0;
+      line-height: 1.6;
+    }
+
+    /* Footer or any additional info */
+    .footer-note {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #999;
+    }
+
+   .playstyle-card img {
+     padding: 2rem;
+     max-height: 250px;
+     width: auto;
+     max-width: 100%;     /* ensures image never overflows container width */
+     object-fit: contain;
+     display: block;
+   }
+
+   .img-glow-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.img-glow-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 110%;
+  height: 110%;
+  background: radial-gradient(ellipse at center, rgba(201,172,88,0.4), transparent 70%);
+  z-index: 0;
+  filter: blur(20px);
+}
+
+.img-glow-wrapper img {
+  display: block;
+  position: relative;
+  z-index: 1;
+  max-height: 250px; /* keep the existing sizing constraint */
+  width: auto;
+}
+
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Echoes of the Unseen</h1>
+    <div class="tagline">Step Lightly — The World Is Listening</div>
+
+    <!-- Embedded YouTube Video -->
+    <div class="video-wrapper">
+      <!-- Replace "VIDEO_ID" with your actual YouTube video ID -->
+      <iframe
+        src="https://www.youtube.com/embed/VIDEO_ID"
+        title="Echoes of the Unseen - Feature Overview"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <!-- Thematic Copy -->
+    <div class="content-block">
+      <p>
+        <strong>Echoes of the Unseen</strong> is the ultimate stealth-and-tracking plugin for Minecraft servers seeking a
+        new dimension of tension and strategy. Every step you take leaves behind a fleeting trace—breadcrumbs that can
+        be discovered by vigilant players looking to stalk your every move.
+      </p>
+      <p>
+        Experience heart-pounding PvP where distant foes vanish from sight until they cross your threshold, turning every
+        encounter into a white-knuckle surprise. Hunt, be hunted, and remember: there's no such thing as truly hiding
+        when the world is listening.
+      </p>
+      <p>
+        Ready to take your server to the next level? Grab <em>Echoes of the Unseen</em> and transform ordinary
+        survival or faction play into a thrilling game of cat and mouse!
+      </p>
+    </div>
+
+    <!-- Download Link -->
+    <a href="#" class="download-btn">Download Plugin</a>
+
+    <!-- "Who Will You Be?" Section -->
+    <h2 class="section-title">Who Will You Be?</h2>
+
+    <!-- 1. The Shadow Broker -->
+    <div class="playstyle-card">
+
+	    <div class="img-glow-wrapper">
+      <img src="images/ShadowBroker.png" alt="The Shadow Broker Skin">
+	    </div>
+      <div class="playstyle-content">
+        <h3>The Shadow Broker</h3>
+        <p>
+          Weave a web of secrets and deals. Gather intel on factions and players, 
+          and barter confidential information for profit or influence. Whether you 
+          trade alliances or instigate betrayals, the Shadow Broker thrives on 
+          intrigue and clandestine negotiations.
+        </p>
+      </div>
+    </div>
+
+    <!-- 2. The Marauder -->
+    <div class="playstyle-card">
+	    <div class="img-glow-wrapper">
+      <img src="images/Marauder.png" alt="The Marauder Skin">
+	    </div>
+      <div class="playstyle-content">
+        <h3>The Marauder</h3>
+        <p>
+          Ambush, raid, and strike fear. Use the plugin’s breadcrumb trails to 
+          pinpoint prey, strike swiftly, and vanish before enemies mobilize. 
+          High-risk, high-reward—tread carefully.
+        </p>
+      </div>
+    </div>
+
+    <!-- 3. The Pathfinder -->
+    <div class="playstyle-card">
+
+      <div class="img-glow-wrapper">
+      <img src="images/Pathfinder.png" alt="The Pathfinder Skin">
+      </div>
+      <div class="playstyle-content">
+        <h3>The Pathfinder</h3>
+        <p>
+          Chart the unknown for profit. Venture into distant realms to locate 
+          precious resources, then sell your discoveries—or guard them for 
+          personal gain. Knowledge is power when every hidden corner holds treasure.
+        </p>
+      </div>
+    </div>
+
+    <!-- 4. The Overseer -->
+    <div class="playstyle-card">
+      <div class="img-glow-wrapper">
+	    <img src="images/Overseer.png" alt="The Overseer Skin">
+      </div>
+      <div class="playstyle-content">
+        <h3>The Overseer</h3>
+        <p>
+          Build mighty fortresses, defend vast stores of wealth, and establish 
+          robust supply lines. Turn your domain into an unassailable haven, 
+          where wealth fuels power and power secures your empire.
+        </p>
+      </div>
+    </div>
+
+    <!-- 5. The Phantom -->
+    <div class="playstyle-card">
+<div class="img-glow-wrapper">
+      <img src="images/Phantom.png" alt="The Phantom Skin">
+</div>
+      <div class="playstyle-content">
+        <h3>The Phantom</h3>
+        <p>
+          A solitary ghost who slips through the night unseen. Maximize stealth, 
+          minimize breadcrumbs, and thrive by avoiding direct conflicts. Live by 
+          your wits, trusting no one—nor needing anyone.
+        </p>
+      </div>
+    </div>
+
+    <!-- 6. Something Else -->
+    <div class="playstyle-card">
+<div class="img-glow-wrapper">
+	    <img src="./anon.png" alt="Custom Style Skin">
+</div>
+      <div class="playstyle-content">
+        <h3>Something Else?</h3>
+        <p>
+          Forge your own path! Combine stealth, cunning, raw power, or any
+          creative approach to thrive in this dynamic realm of footprints 
+          and hidden clues. Your style, your story—this is 
+          <em>Echoes of the Unseen</em>.
+        </p>
+      </div>
+    </div>
+
+    <!-- Footer or Additional Info -->
+    <div class="footer-note">
+      &copy; 2025 Echoes of the Unseen. All rights reserved.
+    </div>
+  </div>
+
+</body>
+</html>
+
